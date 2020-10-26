@@ -1,0 +1,17 @@
+{
+    "exec-opts": [
+      "native.cgroupdriver=systemd"
+    ],
+    "insecure-registries": [
+      "http://repos.vnpay.local:8082"
+    ],
+    "log-driver": "json-file",
+    "log-opts": {
+      "max-file": "3",
+      "max-size": "100m"
+    },
+    "registry-mirrors": [
+      "http://repos.vnpay.local:8082"
+    ],
+    "storage-driver": "overlay2"
+  }

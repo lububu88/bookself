@@ -1,0 +1,7 @@
+deb http://repos.vnpay.local/repository/apt-proxy/ bionic main restricted
+deb http://repos.vnpay.local/repository/apt-proxy/ bionic-updates main restricted
+deb http://repos.vnpay.local/repository/apt-proxy/ bionic universe
+deb http://repos.vnpay.local/repository/apt-proxy/ bionic-updates universe
+deb http://repos.vnpay.local/repository/apt-proxy/ bionic multiverse
+deb http://repos.vnpay.local/repository/apt-proxy/ bionic-updates multiverse
+deb http://repos.vnpay.local/repository/apt-proxy/ bionic-backports main restricted universe multiverse
