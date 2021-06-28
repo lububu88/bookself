@@ -1,0 +1,19 @@
+1.
+Instal docker, docker-compose
+Install docker via RPM package. => enable service docker, check docker status
+
+2.
+Instal docker-compose via file binary
+sudo chmod +x /usr/local/bin/docker-compose
+sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
+$ docker-compose --version
+docker-compose version 1.29.2, build 1110ad01
+
+3. Create dir folder nexus
+cd /
+mkdir /data/nexus
+chown -R 200:200 /data/nexus
+
+4. Run docker-compose.yml
+
+5. Set up nexus
