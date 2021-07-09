@@ -1,6 +1,6 @@
 ### Basic Flow
 
-![Flow](static/cicd_pipeline.png)
+![Flow](https://github.com/lububu88/bookself/blob/main/workload/docs/stactic/cicd-pipeline.png)
 
 #### Note:
 
