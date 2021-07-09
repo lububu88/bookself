@@ -4,18 +4,17 @@ It includes all things related to sre
 ## sre documentation
 
 ### production checklist
-https://github.com/lububu88/bookself/workload/docs/production-checklists.md
+https://github.com/lububu88/bookself/blob/main/workload/docs/production-checklists.md
 
 ### pipeline workflow
-https://github.com/lububu88/bookself/workload/docs/cicd-pipeline.md
+https://github.com/lububu88/bookself/blob/main/workload/docs/cicd-pipeline.md
 
 ### guideline
-https://github.com/lububu88/bookself/workload/docs/guideline.md
+https://github.com/lububu88/bookself/blob/main/workload/docs/guideline.md
 
 ### k8s deploymeny by helmfile
 
-* concept:  https://github.com/lububu88/bookself/workload/docs/kubernetes-deploy.md
-
+* concept:  https://github.com/lububu88/bookself/blob/main/workload/docs/kubernetes-deploy.md
 ## dashboard, logging, metrics
 
 ```
