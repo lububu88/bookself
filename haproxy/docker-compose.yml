@@ -9,3 +9,4 @@ services:
     network_mode: host
     volumes:
     - ./config.d/:/etc/haproxy/:ro
+    - /etc/hosts:/etc/hosts:ro
