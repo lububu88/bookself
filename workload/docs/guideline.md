@@ -11,24 +11,27 @@
 *Webapps:* Truy cập từ enduser.
 
 [dev,test]
-Naming conversion: xxx-dev.vnpaytest.vn, xxx-test.vnpaytest.vn
+- Naming conversion: xxx-dev.vnpaytest.vn, xxx-test.vnpaytest.vn
+
+  + SSL Proxy: offload cert SSL trên đầu Citrix, Nginx, Haproxy -> Proxy tới Ingress-Nginx Cluster Port 80/443
 
 [prod]
-Naming conversion: xxx.vnpay.vn
-SSL Proxy: offload cert SSL trên đầu Citrix, Nginx, Haproxy -> Proxy tới Ingress-Nginx Cluster Port 80/443
+- Naming conversion: xxx.vnpay.vn
+
+  + SSL Proxy: offload cert SSL trên đầu Citrix, Nginx, Haproxy -> Proxy tới Ingress-Nginx Cluster Port 80/443
 
 
 *API Endpoints:* Access from 3rd API (public API)
 
 [dev,test]
-Naming conversion: xxx-dev.vnpayapis.com, xxx-test.vnpayapis.com
+- Naming conversion: xxx-dev.vnpayapis.com, xxx-test.vnpayapis.com
 
-SSL Proxy: offload cert SSL trên đầu Citrix, Nginx, Haproxy -> Proxy tới Ingress-Nginx Cluster Port 80/443
+   + SSL Proxy: offload cert SSL trên đầu Citrix, Nginx, Haproxy -> Proxy tới Ingress-Nginx Cluster Port 80/443
 
 [prod]
-Naming conversion: xxx.vnpayapis.com
+- Naming conversion: xxx.vnpayapis.com
 
-SSL Proxy: offload cert SSL trên đầu Citrix, Nginx, Haproxy -> Proxy tới Ingress-Nginx Cluster Port 80/443
+   + SSL Proxy: offload cert SSL trên đầu Citrix, Nginx, Haproxy -> Proxy tới Ingress-Nginx Cluster Port 80/443
 
 # # # *NOTE* 
 Các services chạy trên cùng k8s cluster, chúng ta nên sử dụng service name để gọi giữa 2 services.
