@@ -1,6 +1,3 @@
-## sre-in-all introduction
-It includes all things related to sre
-
 ## sre documentation
 
 ### production checklist

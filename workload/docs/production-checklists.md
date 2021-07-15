@@ -1,17 +1,22 @@
 # Production ready checklist
 ## General
 - Logs
-  + All logs should be written to `STDIN`, `STDERR`
-  + Do not write sensitive data ( password ...), ID to log
-  + Kubernetes performs log rotation daily, or if the log file grows beyond 10MB in size. Each rotation belongs to a single container; if the container repeatedly fails or the pod is evicted, all previous rotations for the container are lost. By default, Kubernetes keeps up to five logging rotations per container.
-  + Standard envvar `LOG_LEVEL` should be used to set different verbosity: `DEBUG`, `TRACE`, `ERROR`, `WARN`, `INFO` 
+  + Logs nên được ghi theo `STDIN`, `STDERR`
+  + Kubernetes thực thi log rotation hàng ngày, hoặc sẽ được rotate khi 10MB. Mặc định Kubernetes sẽ giữ 5 file Logs trong 1 container. (có thể điều chỉnh được thông số này)
+  + `LOG_LEVEL` nên được chia ra theo dạng: `DEBUG`, `TRACE`, `ERROR`, `WARN`, `INFO` 
   + `https://kubernetes.io/docs/concepts/cluster-administration/logging/`
 
+- Config:
+  + Config nên sử dụng là ENV hoặc configmap, nên sử dụng là configmap.
+
+- Application Stateful, Stateless:
+  + Hiện tại trong Phase này, team chỉ hỗ trợ ứng dụng Stateless.
+
 ## Devops
-- *Dockerfile*: locally buildable, runable. Should be alpine/distroless based if possible. 
-- *Docker-compose* file should be available for locally tested/runnable 
-- Health check: `/health/live` for liveness or readiness. Liveness, means, service will be killed of it doesnt return result within 1 seconds
-- Readiness check: `/health/ready` , means service is ready to accept connection/requests, this normally need to make sure not only serving ports are openned, but other dependencies like database connection is ready as well. A false /ready check, but true /health check generaly means, service is up , dont restart it yet, but do not send traffic to it.
+- *Dockerfile*: locally buildable, runable. Nên sử dụng các Official Image based nếu có thể. 
+- *Docker-compose* sử dụng docker-compose để locally tested/runnable 
+- Health check: `/health/live` for liveness or readiness. Liveness có nghĩa là service sẽ bị kill nếu nó không trả về responds trong vòng 1s, 2s ...
+- Readiness check: `/health/ready` , nghĩa là service đã sẵn sàng để tiếp nhận connection/requests, điều này thường cần đảm bảo rằng không chỉ các cổng phục vụ được mở, mà các phần phụ thuộc khác như kết nối database, redis, rabbitmq cũng sẵn sàng. Nếu /ready check là false, nhưng /health/live check là true, service is up , không restart nó, nhưng sẽ không gửi traffic tới nó nữa.
 - Health+ready: `/health`: If (!exists(liveness) && !exists(readiness)), must be implements simple endpoint to serve default healthly check (return 200, respond < 1s)
   + `https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-startup-probes/`
   + `https://viblo.asia/p/kubernetes-best-practices-liveness-va-readiness-health-checks-4dbZN9R8KYM`
@@ -23,12 +28,12 @@
 - Graceful shutdown: The application understands SIGTERM and other signals and will gracefully shutdown itself after processing the current task. 
   + `https://kubernetes.io/docs/concepts/workloads/pods/pod/#termination-of-pods`
   + `https://techmaster.vn/posts/34120/graceful-shutdown-voi-nodejs-va-kubernete`
-- Metrics ready: `/metrics` , serving standard prometheus metrics. 
+- Metrics ready: `/metrics` , Cung cấp các metrics cơ bản để prometheus có thể scarping, dựa trên cơ sở đó để tối ưu hóa ứng dụng.... 
+  + metric custumize
   + `https://tomgregory.com/the-four-types-of-prometheus-metrics/`
-- Alerts should be configured, default standard alert should be set. **RED** ( Rate, Error, Duration), **USE** (Utilization, Saturation, Errors)
-  + CPU / memory consumption has increased dramatically.
-  + Traffic has increased / fell dramatically.
-  + The number of transactions processed per second has brightly changed in any direction.
-  + The percentage of errors or their frequency exceeded the permissible threshold (4xx, 5xx)
-  + The service stopped sending metrics (a situation often overlooked).
+- Alerts nên được cấu hình, default standard alert should be set. **RED** ( Rate, Error, Duration), **USE** (Utilization, Saturation, Errors)
+  + CPU / memory tăng đột biến.
+  + Traffic tăng giảm đột ngột (2xx, 4xx, 5xx)
+  + Số lượng transactions processed per second (TPS) cần được theo dõi
+- Auto Scale Application for CPU, Mem ....
 - Rollout and Rollback service: Plan Customize

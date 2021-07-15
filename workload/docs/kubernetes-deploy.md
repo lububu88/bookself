@@ -1,10 +1,10 @@
 ### How to deploy a service into Cluster K8S
 
-* Application need build and deploy in [dev,test,...] before release on [prod]
-* In [dev,test,..] dev full controls cluster, dev integrates CICD on one repo. (action in Gitlab Department)
-* In [prod] using images tag running on [test] and pass all case test, dev must using template CD define to Cluster Prod (action in Gitlab System)
-* Build docker image (use any, familiar CI)
-* Push docker image as following name `hub.vnpaytest.vn/[your_project]/[your-image]:[version]-[short-sha1-hash]`
+* Application nên được deploy trên [dev,test,...] trước khi đưa lên [prod]
+* In [dev,test,..] CICD là fully automate to build CI and CD deploy.
+* In [prod] tạo ra release hoặc tags cho application, Gitlab Bot sẽ có nhiệm vụ deploy/change sau khi được approval.
+* Build docker image
+* Push docker image `hub.vnpaytest.vn/[your_project]/[your-image]:[version]-[short-sha1-hash]`
     * your-project: hub project
     * your-image-name: your image repository
     * version: version application
