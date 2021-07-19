@@ -35,5 +35,6 @@
   + CPU / memory tăng đột biến.
   + Traffic tăng giảm đột ngột (2xx, 4xx, 5xx)
   + Số lượng transactions processed per second (TPS) cần được theo dõi
-- Auto Scale Application for CPU, Mem ....
-- Rollout and Rollback service: Plan Customize
+- Auto Scale Application for CPU, Mem ... test tải tối ưu hóa tài nguyên. Using ab to test `ab -n 10000 -c 10 https://demoweb-test.vnpaytest.vn/`
+
+- Rollout and Rollback service: Plan Customize: cụ thể chi tiết cho kế hoạch
