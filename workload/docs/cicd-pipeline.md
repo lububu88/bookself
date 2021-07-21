@@ -2,7 +2,7 @@
 
 ![Flow](https://github.com/lububu88/bookself/blob/main/workload/docs/stactic/cicd-pipeline.png)
 
-![Flow](https://github.com/lububu88/bookself/blob/main/workload/docs/stactic/CICD_BOT.png)
+![Flow](https://github.com/lububu88/bookself/blob/main/workload/docs/stactic/CICD-BOT.png)
 
 #### Note:
 
