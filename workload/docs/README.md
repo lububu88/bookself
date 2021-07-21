@@ -3,6 +3,9 @@
 ### production checklist
 https://github.com/lububu88/bookself/blob/main/workload/docs/production-checklists.md
 
+### 1 Repo or 2 Repo
+https://github.com/lububu88/bookself/blob/main/workload/docs/1%20Repo%20or%202%20Repo.md
+
 ### pipeline workflow
 https://github.com/lububu88/bookself/blob/main/workload/docs/cicd-pipeline.md
 
