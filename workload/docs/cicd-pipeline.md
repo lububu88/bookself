@@ -1,8 +1,14 @@
 ### Basic Flow
 
-![Flow](https://github.com/lububu88/bookself/blob/main/workload/docs/stactic/cicd-pipeline.png)
+![Flow](https://github.com/lububu88/bookself/blob/main/workload/docs/stactic/gitflow.png)
+
+![Flow](https://github.com/lububu88/bookself/blob/main/workload/docs/stactic/gitflowass.png)
 
 ![Flow](https://github.com/lububu88/bookself/blob/main/workload/docs/stactic/CICD-BOT.png)
+
+![Flow](https://github.com/lububu88/bookself/blob/main/workload/docs/stactic/Build-CI.png)
+
+![Flow](https://github.com/lububu88/bookself/blob/main/workload/docs/stactic/Flow-CD.png)
 
 #### Note:
 
